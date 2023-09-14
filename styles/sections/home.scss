@@ -1,0 +1,87 @@
+@import "../shared";
+
+.main-container {
+    .home {
+        nav {
+            @include flexBet;
+            position: fixed;
+            width: calc(100% - 48px);
+            top: 0;
+            padding: $space-sm $space-md $space-sm $space-md;
+            background-color: $color-neutral;
+            z-index: 99;
+            .menu-logo {
+                img {
+                    width: 25px;
+                }
+            }
+            .menu-itens {
+                display: flex;
+                @media screen and (max-width: 992px) {
+                    display: none;
+                }
+                div {
+                    margin-left: $space-md;
+                    a {
+                        color: $color-primary;
+                        text-decoration: none;
+                        transition: 0.4s all;
+                        &:hover {
+                            color: $color-secondary;
+                        }
+                        &.active {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .menu-mobile {
+                display: none;
+                @media screen and (max-width: 992px) {
+                    display: block;
+                    a {
+                        color: $color-primary;
+                    }
+                }
+                .menu-itens-mobile {
+                    position: fixed;
+                    display: none;
+                    width: auto;
+                    height: auto;
+                    right: 0;
+                    padding: $space-md;
+                    background-color: $color-neutral-opacity;
+                    border-bottom-left-radius: 2px;
+                    div {
+                        margin: $space-sm;
+
+                        a {
+                            text-decoration: none;
+                            transition: 0.4s all;
+                            &:hover {
+                                color: $color-secondary;
+                            }
+                            &.active {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .banner {
+            background-image: url(../assets/img/banner.png);
+            width: 100%;
+            height: 582px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 70% 20%;
+            @media screen and (max-width: 992px) {
+                background-image: url(../assets/img/banner-mobile.png);
+                background-position: 50% 30%;
+                height: 282px;
+            }
+        }
+    }
+}

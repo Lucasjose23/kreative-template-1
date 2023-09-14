@@ -1,0 +1,72 @@
+$space-sm: 12px;
+$space-md: 24px;
+$space-xl: 48px;
+
+$color-primary: #d7af06;
+$color-secondary: #ecd16e;
+$color-neutral: #363636;
+$color-neutral-opacity: rgba(54, 54, 54, 0.9);
+
+.font-menu {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.font-title {
+    color: #d7af06;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    @media screen and (max-width: 992px) {
+        font-size: 18px;
+    }
+}
+.font-text {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media screen and (max-width: 992px) {
+        font-size: 14px;
+    }
+}
+.font-list {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media screen and (max-width: 992px) {
+        font-size: 18px;
+    }
+}
+.font-contact {
+    color: #f5f5f5;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media screen and (max-width: 992px) {
+        font-size: 14px;
+    }
+}
+
+.line-separation {
+    position: relative;
+    width: 80%;
+    height: 4px;
+    margin: $space-xl auto $space-xl auto;
+    background-color: $color-primary;
+    border-radius: 2px;
+}
+
+@mixin flexBet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

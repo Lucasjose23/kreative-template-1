@@ -1,0 +1,47 @@
+@import "../shared";
+
+.main-container {
+    .contact {
+        margin-top: $space-xl;
+        padding: $space-xl $space-md $space-xl $space-md;
+        background-color: $color-neutral;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        .title {
+            color: $color-primary;
+            margin-bottom: $space-md;
+        }
+        .container-contacts {
+            @include flexBet;
+            justify-content: space-around;
+            text-align: left;
+            @media screen and (max-width: 992px) {
+                display: block;
+            }
+            #contact-samuel {
+                @media screen and (max-width: 992px) {
+                    margin-top: $space-md;
+                }
+            }
+            .font-contact {
+                display: flex;
+                align-items: center;
+                margin-top: $space-sm;
+
+                img {
+                    margin-right: $space-sm;
+                    width: 16px;
+                }
+            }
+        }
+        .footer {
+            margin-top: $space-md;
+            color: white;
+            text-align: center;
+            a {
+                color: $color-primary;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import url("https://fonts.cdnfonts.com/css/inter");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "shared";
+@import "sections/home";
+@import "sections/about";
+@import "sections/work";
+@import "sections/articles";
+@import "sections/contact";
+
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}

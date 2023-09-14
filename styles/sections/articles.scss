@@ -1,0 +1,49 @@
+@import "../shared";
+
+.main-container {
+    .article {
+        margin-top: $space-xl;
+        padding: 0 $space-md 0 $space-md;
+        .title {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-right: 4px;
+            }
+        }
+        .article-container {
+            @include flexBet;
+            @media screen and (max-width: 992px) {
+                display: block;
+            }
+            .list-articles {
+                margin-top: $space-md;
+                width: 48%;
+                @media screen and (max-width: 992px) {
+                    width: 100%;
+                }
+                .item {
+                    @include flexBet;
+                    height: 64px;
+                    padding: 0 $space-md 0 $space-md;
+                    margin-bottom: $space-md;
+                    background-color: #8d8d8d80;
+                    border-radius: 10px;
+                    border: 3px solid #8d8d8d80;
+                    a {
+                        display: block;
+                        width: 29px;
+                        height: 29px;
+                        margin-left: $space-sm;
+                        background-image: url(../assets/img/icon-download.svg);
+                        &:hover,
+                        &:active {
+                            background-image: url(../assets/img/icon-download-hover.svg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

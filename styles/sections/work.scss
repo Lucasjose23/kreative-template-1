@@ -1,0 +1,44 @@
+@import "../shared";
+
+.main-container {
+    .work {
+        padding: $space-sm $space-md $space-md $space-md;
+        margin-top: $space-xl;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) -1.25%, #757575 100%);
+        h1 {
+            margin-top: $space-sm;
+        }
+        .list {
+            @include flexBet;
+            @media screen and (max-width: 992px) {
+                display: block;
+            }
+            .list-itens {
+                @include flexBet;
+                align-items: baseline;
+                width: 60%;
+                @media screen and (max-width: 992px) {
+                    display: block;
+                }
+                ul {
+                    width: 100%;
+                    margin-right: $space-xl;
+                    padding: 0;
+                    li {
+                        width: 100%;
+                        margin: $space-sm $space-sm $space-sm 0;
+                        padding: $space-sm;
+                        border-radius: 10px;
+                        background-color: $color-secondary;
+                        list-style: none;
+                    }
+                }
+            }
+            .logo {
+                @media screen and (max-width: 992px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
