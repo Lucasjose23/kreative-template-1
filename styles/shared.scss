@@ -2,8 +2,8 @@ $space-sm: 12px;
 $space-md: 24px;
 $space-xl: 48px;
 
-$color-primary: #d7af06;
-$color-secondary: #ecd16e;
+$color-primary: rgb(84, 84, 223);
+$color-secondary: #9993eb;
 $color-neutral: #363636;
 $color-neutral-opacity: rgba(54, 54, 54, 0.9);
 
@@ -15,7 +15,7 @@ $color-neutral-opacity: rgba(54, 54, 54, 0.9);
     text-transform: uppercase;
 }
 .font-title {
-    color: #d7af06;
+    color: $color-primary;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;

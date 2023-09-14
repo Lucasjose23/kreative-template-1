@@ -35,6 +35,10 @@
                 }
             }
             .logo {
+                img{
+                    width: 200px;
+                }
+               
                 @media screen and (max-width: 992px) {
                     display: none;
                 }
