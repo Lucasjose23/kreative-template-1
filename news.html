@@ -7,331 +7,160 @@
     <title>Document</title>
 </head>
 <style>
-    /********************************
-* Basics
-*********************************/
-    * {
-        box-sizing: border-box;
+    body>.section-cards {
+        padding-bottom: 40px;
     }
 
-    body,
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-        color: #3d4852;
-        font-family: 'Muli', sans-serif;
-        font-size: 1rem;
-        line-height: 1.6;
+    body figure {
+        margin: 0;
     }
 
-    h1 {
-        font-size: 2rem;
-        margin: 2rem auto 1rem;
+    .section-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .section-cards>.cards-title {
+        flex: 100%;
+        margin-bottom: -2%;
+        text-align: center;
+        font-size: 1.9em;
         line-height: 1;
+        text-transform: capitalize;
     }
 
-    h2 {
-        font-size: 1.25rem;
-        margin-top: 0;
+    .section-cards>.card-container {
+        margin-top: 2%;
+        margin-left: 1.3333%;
+        width: 288px;
     }
 
-    a {
-        color: inherit;
-        transition: 0.25s all ease-in-out;
+    .section-cards>.card-container:nth-of-type(4n + 1) {
+        margin-left: 0;
     }
 
-    a:visited {
-        color: #3d4852;
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px 0 rgba(31, 36, 38, 0.15);
     }
 
-    a:hover,
-    a:focus,
-    a:active {
-        background-color: #3d4852;
-        color: white;
+    .card-container>.card-image {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        overflow: hidden;
+        height: 200px;
     }
 
-    a:focus {
-        outline: thin solid #3d4852;
-    }
-
-    a:hover,
-    a:active {
-        outline: 0;
-    }
-
-    a.button {
-        align-items: center;
-        background-color: #3d4852;
-        border: 1px solid #3d4852;
-        border-radius: 4px;
-        color: white;
-        cursor: pointer;
-        display: inline-flex;
-        padding: 0.25rem 0.75rem;
-        text-decoration: none;
-        transition: all 0.25s ease-in-out;
-    }
-
-    a.button:hover,
-    a.button:focus {
-        background-color: #58636F;
-        box-shadow: 0 0 2px 2px #bac6d3;
-    }
-
-    a.button:focus {
-        outline: 1px solid #3d4852;
-    }
-
-    a.button:visited {
-        color: #fff;
-    }
-
-    ul {
-        margin: 0 0 1.5rem;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-    }
-
-    svg {
-        fill: currentColor;
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-
-    img {
+    .card-container>.card-image>.image {
+        margin-top: -20%;
+        max-width: 100%;
         height: auto;
-        margin-bottom: .5rem;
-        max-width: calc(100% + 2rem);
-        position: relative;
-        left: -1rem;
-        right: -1rem;
     }
 
-    p {
-        margin: 0 0 .5rem;
+    .card-container>.title,
+    .card-container>.text {
+        padding-right: 12px;
+        padding-left: 12px;
     }
 
-    main {
-        padding: 1rem 2rem;
-        margin: auto;
+    .card-container>.title {
+        margin: 24px 0 0;
+        font-size: 1.8em;
+        text-transform: capitalize;
     }
 
-    header {
-        padding: 1rem 2rem;
+    .card-container>.text {
+        margin-bottom: 24px;
+        font-size: 1.2em;
+        line-height: 1.3;
+    }
+
+    .card-container>.link {
+        display: block;
+        margin-top: auto;
+        padding: 12px 0;
+        border-top: 1px solid #d5d9db;
+        font-size: 1.2em;
         text-align: center;
     }
 
-    .card {
-        border: 1px solid #bac6d3;
-        border-radius: 8px;
-        padding: 1rem;
-    }
-
-    /********************************
-* Carousel styles
-*********************************/
-    .carousel-items {
-        display: flex;
-        overflow-x: scroll;
-        padding: 1rem 0;
-        scroll-snap-type: x mandatory;
-    }
-
-    .carousel-item {
-        flex: 1 0 250px;
-        margin-left: 1rem;
-        scroll-snap-align: start;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: #F5F5F5;
-    }
-
-    ::-webkit-scrollbar {
-        height: 6px;
-        background-color: #F5F5F5;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: #3d4852;
-        border-radius: 3px;
-    }
-
-
-    /********************************
-* Breakpoints
-*********************************/
-    @media screen and (min-width: 576px) {
-        .carousel-item {
-            flex-basis: 300px;
+    @media only screen and (max-width: 1200px) {
+        .section-cards>.card-container:nth-of-type(3n + 1) {
+            margin-left: 0;
         }
     }
 
-    @media screen and (min-width: 992px) {
-
-        body,
-        button,
-        input,
-        select,
-        optgroup,
-        textarea {
-            font-size: 1.125rem;
+    @media only screen and (max-width: 906px) {
+        .section-cards>.card-container {
+            margin-left: 0;
         }
 
-        h1 {
-            font-size: 2.75rem;
-        }
-
-        .carousel-item {
-            flex-basis: 325px;
-        }
-    }
-
-    @media screen and (min-width: 1280px) {
-        h1 {
-            font-size: 4rem;
-        }
-
-        .carousel-item {
-            flex-basis: 450px;
-        }
-    }
-
-    @media screen and (min-width: 1600px) {
-
-        body,
-        button,
-        input,
-        select,
-        optgroup,
-        textarea {
-            font-size: 1.25rem;
+        .section-cards>.card-container:nth-of-type(2n) {
+            margin-left: 1.3333%;
         }
     }
 </style>
 
 <body>
+    <section class="section-cards">
+        <header class="cards-title">
+            <h2 class="title">Related articles</h2>
+        </header>
+        <article class="card-container">
+            <figure class="card-image">
+                <img class="image"
+                    src="https://images.unsplash.com/photo-1559616069-099142a8c902?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </figure>
+            <h3 class="title">This is a sample title</h3>
+            <p class="text">Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
+                approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
+                Organically grow the holistic world view of disruptive innovation via workplace diversity and
+                empowerment.</p>
+            <a class="link" href="#">Read</a>
+        </article>
+        <article class="card-container">
+            <figure class="card-image">
+                <img class="image"
+                    src="https://images.unsplash.com/photo-1559915075-7290c8f71407?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </figure>
+            <h3 class="title">Dummy text follows</h3>
+            <p class="text">Bring to the table win-win survival strategies to ensure proactive domination. At the end of
+                the
+                day, going forward, a new normal that has evolved from generation X is on the runway heading towards a
+                streamlined
+                cloud solution.</p><a class="link" href="#">Read</a>
+        </article>
+        <article class="card-container">
+            <figure class="card-image">
+                <img class="image"
+                    src="https://images.unsplash.com/photo-1560221265-c934d54f8e8a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </figure>
+            <h3 class="title">Content is Corporate Ipsum</h3>
+            <p class="text">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test.
+                Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along
+                the information highway will close the loop on focusing solely on the bottom line.</p>
+            <a class="link" href="#">Read</a>
+        </article>
+        <article class="card-container">
+            <figure class="card-image">
+                <img class="image"
+                    src="https://images.unsplash.com/photo-1560871261-5c03298a48fc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+            </figure>
+            <h3 class="title">And the images are from unsplash</h3>
+            <p class="text">Podcasting operational change management inside of workflows to establish a framework.
+                Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the
+                ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform
+                integration.</p>
+            <a class="link" href="#">Read</a>
+        </article>
+    </section>
 
-    <main>
-        <section class="carousel">
-            <ul class="carousel-items">
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">My awesome article</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">Just another awesome article</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">Yet another awesome article</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">Wow! Another awesome article</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">That's some awesome article</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">Just a lot or articles !</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">One more, one more !</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">Again !</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="carousel-item">
-                    <div class="card">
-                        <h2 class="card-title">One last</h2>
-                        <img src="https://play-lh.googleusercontent.com/8LYEbSl48gJoUVGDUyqO5A0xKlcbm2b39S32xvm_h-8BueclJnZlspfkZmrXNFX2XQ" />
-                        <div class="card-content">
-                            <p>Mewl for food at 4am chase mice. Scratch leg; meow for can opener to feed me purr when
-                                being pet nya nya nyan catasstrophe, fooled again thinking the dog likes me cough
-                                hairball on conveniently placed pants.</p>
-                            <a href="#" class="button">Read more</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </main>
+
 </body>
 
 </html>
